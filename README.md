@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Plataforma de Mensajes AI
+Este proyecto es una interfaz de visualización de mensajes entre usuarios y una IA, creada con Next.js 14, React y TypeScript. Permite buscar, copiar y navegar por los mensajes de manera accesible y responsive.
 
-## Getting Started
+Instrucciones de Instalación
+Clonar el repositorio:
 
-First, run the development server:
+bash
+Copy
+Edit
+git clone https://github.com/f3l3p1/AI-Messaging-Platform
+cd ai-messaging-platform % 
 
-```bash
+Instalar dependencias:
+
+bash
+Copy
+Edit
+npm install
+Ejecutar el servidor de desarrollo:
+
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Abrir la aplicación en:
+http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Suposiciones
+La API externa (/api/messages) devuelve mensajes con el siguiente formato:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+json
+Copy
+Edit
+{
+  "id": "1",
+  "bot_sender": 1,
+  "message_text": "¡Hola!",
+  "message_date": "2024-02-29T15:10:512Z"
+}
+Los mensajes se agrupan por fecha en:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Hoy
+Ayer
+Esta semana
+Fechas anteriores
+Características Implementadas
+Requisitos básicos:
 
-## Learn More
+Obtiene mensajes a través de una ruta API de Next.js.
+Agrupa mensajes por fecha.
+Diferencia visualmente entre mensajes de IA y del usuario.
+Muestra las fechas de manera legible.
+Diseño responsive (móvil, tablet y escritorio).
+Botón para ir al final de la conversación.
+Encabezados de fecha fijos mientras se desplaza.
+Extras:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Navegación con teclado: Usa las flechas arriba y abajo.
+Buscar mensajes: Filtra mensajes con una barra de búsqueda.
+Copiar mensajes: Copia el contenido del mensaje al portapapeles.
+Accesibilidad: Soporte para lectores de pantalla con etiquetas ARIA.
+Decisiones Técnicas
+Next.js 14: Por su optimización de rendimiento y manejo de rutas modernas.
+TypeScript: Garantiza seguridad en los tipos y reduce errores.
+date-fns: Para manejar y comparar fechas de manera eficiente.
+Limitaciones o Mejoras Futuras
+Paginación: Agregar paginación para listas largas de mensajes.
+Enlace entre mensajes: Mejorar el flujo de conversaciones enlazadas.
+Errores: Mejorar los mensajes de error y añadir mecanismos de reintento.
+Interfaz: Añadir más animaciones y mejoras visuales.
