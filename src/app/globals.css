@@ -1,27 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.message-viewer {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.message {
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.user-message {
+  background-color: #d0f0fd;
+  text-align: right;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.ai-message {
+  background-color: #e8e8e8;
+  text-align: left;
+}
+
+.timestamp {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.selected-message {
+  outline: 2px solid #007bff;
+  background-color: #e1f5fe;
+}
+
+.copy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.copy-button:hover {
+  background-color: #0056b3;
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.scroll-button:hover {
+  background-color: #0056b3;
 }
